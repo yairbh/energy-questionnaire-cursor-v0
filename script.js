@@ -141,6 +141,7 @@ const questionnaire = {
     currentSection: 1
 };
 
+
 function displayQuestion() {
     const section = questionnaire.sections[questionnaire.currentSection];
     const questionContainer = document.getElementById('question-container');
@@ -153,14 +154,6 @@ function displayQuestion() {
     setTimeout(() => {
         questionContainer.innerHTML = '';
         optionsContainer.innerHTML = '';
-
-        // Display the main question header for all sections except the first and eighth
-        if (questionnaire.currentSection !== 1 && questionnaire.currentSection !== 8) {
-            const mainHeader = document.createElement('h1');
-            mainHeader.className = 'question-header';
-            mainHeader.textContent = 'מהי הטכנולוגיה הטובה ביותר לייצור חשמל?';
-            questionContainer.appendChild(mainHeader);
-        }
 
         // Display options
         if (section.type === "circle") {
