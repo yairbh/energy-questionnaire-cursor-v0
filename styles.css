@@ -27,6 +27,11 @@
   font-style: 500;
 }
 
+/* Ensure that all relevant elements inherit the FbAgol font */
+body, h1, h2, h3, p, .button, .description-section, .main-title, .energy-type-title {
+    font-family: 'FbAgol', Arial, sans-serif;
+}
+
 
 /* General Styles */
 body {
