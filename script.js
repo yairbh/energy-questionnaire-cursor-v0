@@ -142,6 +142,7 @@ const questionnaire = {
 };
 
 
+
 function displayQuestion() {
     const section = questionnaire.sections[questionnaire.currentSection];
     const questionContainer = document.getElementById('question-container');
@@ -187,7 +188,7 @@ function displayQuestion() {
 
             const startOverButton = document.createElement('button');
             startOverButton.className = 'button';
-            startOverButton.textContent = 'התחילו מחדש';
+            startOverButton.innerHTML = `<img src="other_option.png" alt="התחילו מחדש"> התחילו מחדש`;
             startOverButton.onclick = () => selectOption(1);
             optionsContainer.appendChild(startOverButton);
         } else {
@@ -199,7 +200,11 @@ function displayQuestion() {
             if (section.content) {
                 const contentDiv = document.createElement('div');
                 contentDiv.className = 'description-section';
-                contentDiv.innerHTML = `<p>${section.content}</p>`;
+                const contentParts = section.content.split('יחד עם זאת...');
+                contentDiv.innerHTML = `
+                    <p><strong>בחירה מצוינת!</strong> ${contentParts[0]}</p>
+                    <p><strong>יחד עם זאת...</strong> ${contentParts[1]}</p>
+                `;
                 questionContainer.appendChild(contentDiv);
             }
 
@@ -216,7 +221,7 @@ function displayQuestion() {
             section.options.forEach((option, index) => {
                 const button = document.createElement('button');
                 button.className = 'button';
-                button.textContent = option.text;
+                button.innerHTML = `<img src="${option.icon}" alt="${option.text}"> ${option.text}`;
                 button.onclick = () => {
                     button.style.transform = 'scale(0.95)';
                     setTimeout(() => {
