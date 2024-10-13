@@ -24,7 +24,7 @@
   font-family: 'FbAgol';
   src: url('fonts/FbAgol-Medium.otf') format('opentype');
   font-weight: medium;
-  font-style: 500;
+  font-style: 400;
 }
 
 /* Ensure that all relevant elements inherit the FbAgol font */
