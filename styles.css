@@ -56,6 +56,9 @@ p {
     width: 400px;
     height: 400px;
     margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .circle-option {
@@ -101,12 +104,13 @@ p {
 
 /* Inner Sections */
 .question-header {
-    background-color: rgb(32, 75, 124);
-    color: #fff;
+    color: rgb(32, 75, 124);
+    background-color: #fff;
     padding: 10px;
     margin: -20px -20px 20px -20px;
     border-radius: 10px 10px 0 0;
     font-size: 24px;
+    border-bottom: 2px solid rgb(32, 75, 124);
 }
 
 .energy-type-title {
@@ -142,9 +146,7 @@ p {
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
 }
 
 .button:hover {
@@ -152,20 +154,14 @@ p {
     color: #fff;
 }
 
-.button-primary {
-    background-color: rgb(32, 75, 124);
-    color: #fff;
+/* Final Section */
+.final-section {
+    text-align: right;
+    padding: 20px;
 }
 
-.button-primary:hover {
-    background-color: #fff;
-    color: rgb(32, 75, 124);
-}
-
-.button img {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
+.final-section p {
+    margin-bottom: 15px;
 }
 
 /* Responsive Design */
