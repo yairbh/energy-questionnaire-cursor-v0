@@ -10,14 +10,14 @@
   font-family: 'FbAgol';
   src: url('fonts/FbAgol-Bold.otf') format('opentype');
   font-weight: bold;
-  font-style: 700;
+  font-style: 500;
 }
 
 @font-face {
   font-family: 'FbAgol';
   src: url('fonts/FbAgol-Light.otf') format('opentype');
-  font-weight: 200;
-  font-style: normal;
+  font-weight: light;
+  font-style: 200;
 }
 
 @font-face {
