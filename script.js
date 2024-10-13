@@ -142,7 +142,6 @@ const questionnaire = {
 };
 
 
-
 function displayQuestion() {
     const section = questionnaire.sections[questionnaire.currentSection];
     const questionContainer = document.getElementById('question-container');
@@ -188,7 +187,7 @@ function displayQuestion() {
 
             const startOverButton = document.createElement('button');
             startOverButton.className = 'button';
-            startOverButton.innerHTML = `<img src="other_option.png" alt="התחילו מחדש"> התחילו מחדש`;
+            startOverButton.textContent = 'התחילו מחדש';
             startOverButton.onclick = () => selectOption(1);
             optionsContainer.appendChild(startOverButton);
         } else {
@@ -200,11 +199,17 @@ function displayQuestion() {
             if (section.content) {
                 const contentDiv = document.createElement('div');
                 contentDiv.className = 'description-section';
-                const contentParts = section.content.split('יחד עם זאת...');
-                contentDiv.innerHTML = `
-                    <p><strong>בחירה מצוינת!</strong> ${contentParts[0]}</p>
-                    <p><strong>יחד עם זאת...</strong> ${contentParts[1]}</p>
-                `;
+                
+                if (questionnaire.currentSection >= 2 && questionnaire.currentSection <= 7) {
+                    const contentParts = section.content.split('יחד עם זאת...');
+                    contentDiv.innerHTML = `
+                        <p><strong>בחירה מצוינת!</strong> ${contentParts[0]}</p>
+                        <p><strong>יחד עם זאת...</strong> ${contentParts[1]}</p>
+                    `;
+                } else {
+                    contentDiv.innerHTML = `<p>${section.content}</p>`;
+                }
+                
                 questionContainer.appendChild(contentDiv);
             }
 
