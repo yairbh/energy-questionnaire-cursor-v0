@@ -21,13 +21,14 @@ body {
     min-height: 500px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 /* Typography */
 h1, h2, h3 {
     color: #333;
     line-height: 1.2;
+    margin-top: 0;
 }
 
 h1 {
@@ -131,6 +132,14 @@ p {
     text-align: right;
 }
 
+.description-section p {
+    margin-bottom: 10px;
+}
+
+.description-section p:last-child {
+    margin-bottom: 0;
+}
+
 /* Buttons */
 .button-container {
     display: flex;
@@ -147,12 +156,20 @@ p {
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .button:hover {
     background-color: rgb(32, 75, 124);
     color: #fff;
+}
+
+.button img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
 }
 
 /* Final Section */
