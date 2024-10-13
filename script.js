@@ -154,8 +154,8 @@ function displayQuestion() {
         questionContainer.innerHTML = '';
         optionsContainer.innerHTML = '';
 
-        // Display the main question header for all sections except the first
-        if (questionnaire.currentSection !== 1) {
+        // Display the main question header for all sections except the first and eighth
+        if (questionnaire.currentSection !== 1 && questionnaire.currentSection !== 8) {
             const mainHeader = document.createElement('h1');
             mainHeader.className = 'question-header';
             mainHeader.textContent = 'מהי הטכנולוגיה הטובה ביותר לייצור חשמל?';
@@ -184,12 +184,24 @@ function displayQuestion() {
                 button.onclick = () => selectOption(option.nextSection);
                 optionsContainer.appendChild(button);
             });
+        } else if (section.type === "final") {
+            const finalContent = document.createElement('div');
+            finalContent.className = 'final-section';
+            finalContent.innerHTML = `
+                <p>${section.content}</p>
+            `;
+            questionContainer.appendChild(finalContent);
+
+            const startOverButton = document.createElement('button');
+            startOverButton.className = 'button';
+            startOverButton.textContent = 'התחילו מחדש';
+            startOverButton.onclick = () => selectOption(1);
+            optionsContainer.appendChild(startOverButton);
         } else {
-            if (section.question !== 'החלטה סופית') {
-                const sectionTitle = document.createElement('h2');
-                sectionTitle.textContent = section.question;
-                questionContainer.appendChild(sectionTitle);
-            }
+            const sectionTitle = document.createElement('h2');
+            sectionTitle.className = 'energy-type-title';
+            sectionTitle.textContent = section.question;
+            questionContainer.appendChild(sectionTitle);
 
             if (section.content) {
                 const contentDiv = document.createElement('div');
@@ -210,7 +222,7 @@ function displayQuestion() {
 
             section.options.forEach((option, index) => {
                 const button = document.createElement('button');
-                button.className = index === 0 ? 'button button-primary' : 'button';
+                button.className = 'button';
                 button.textContent = option.text;
                 button.onclick = () => {
                     button.style.transform = 'scale(0.95)';
@@ -223,15 +235,6 @@ function displayQuestion() {
             });
 
             optionsContainer.appendChild(buttonContainer);
-        }
-
-        // Add "Start Over" button for the final section
-        if (section.type === "final") {
-            const startOverButton = document.createElement('button');
-            startOverButton.className = 'button';
-            startOverButton.textContent = 'התחילו מחדש';
-            startOverButton.onclick = () => selectOption(1);
-            optionsContainer.appendChild(startOverButton);
         }
 
         // Fade in the new content
