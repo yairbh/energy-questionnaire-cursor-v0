@@ -18,7 +18,7 @@ const questionnaire = {
             question2: "האם ברצונך לשקול אפשרות אחרת או להמשיך עם גז טבעי?",
             options: [
                 { text: "להמשיך עם גז טבעי", nextSection: 9, icon: "גז.png" },
-                { text: "לבחור אפשרות אחרת", nextSection: 8 }
+                { text: "לבחור אפשרות אחרת", nextSection: 8, icon: "other_option.png" }
             ]
         },
         3: {
@@ -27,7 +27,7 @@ const questionnaire = {
             question2: "האם ברצונך לשקול אפשרות אחרת או להמשיך עם טורבינות רוח?",
             options: [
                 { text: "להמשיך עם טורבינות רוח", nextSection: 10, icon: "רוח.png" },
-                { text: "לבחור אפשרות אחרת", nextSection: 8 }
+                { text: "לבחור אפשרות אחרת", nextSection: 8, icon: "other_option.png" }
             ]
         },
         4: {
@@ -36,7 +36,7 @@ const questionnaire = {
             question2: "האם ברצונך לשקול אפשרות אחרת או להמשיך עם כוח הידרו-אלקטרי?",
             options: [
                 { text: "להמשיך עם הידרו-אלקטרי", nextSection: 11, icon: "הידרו.png" },
-                { text: "לבחור אפשרות אחרת", nextSection: 8 }
+                { text: "לבחור אפשרות אחרת", nextSection: 8, icon: "other_option.png" }
             ]
         },
         5: {
@@ -45,7 +45,7 @@ const questionnaire = {
             question2: "האם ברצונך לשקול אפשרות אחרת או להמשיך עם כוח פוטו-וולטאי?",
             options: [
                 { text: "להמשיך עם פוטו-וולטאי", nextSection: 12, icon: "פוטו-וולטאית.png" },
-                { text: "לבחור אפשרות אחרת", nextSection: 8 }
+                { text: "לבחור אפשרות אחרת", nextSection: 8, icon: "other_option.png" }
             ]
         },
         6: {
@@ -54,7 +54,7 @@ const questionnaire = {
             question2: "האם ברצונך לשקול אפשרות אחרת או להמשיך עם כוח תרמו-סולארי?",
             options: [
                 { text: "להמשיך עם תרמו-סולארי", nextSection: 13, icon: "תרמו-סולארי.png" },
-                { text: "לבחור אפשרות אחרת", nextSection: 8 }
+                { text: "לבחור אפשרות אחרת", nextSection: 8, icon: "other_option.png" }
             ]
         },
         7: {
@@ -63,7 +63,7 @@ const questionnaire = {
             question2: "האם ברצונך לשקול אפשרות אחרת או להמשיך עם כוח גרעיני?",
             options: [
                 { text: "להמשיך עם כוח גרעיני", nextSection: 14, icon: "גרעיני.png" },
-                { text: "לבחור אפשרות אחרת", nextSection: 8 }
+                { text: "לבחור אפשרות אחרת", nextSection: 8, icon: "other_option.png" }
             ]
         },
         8: {
@@ -84,7 +84,7 @@ const questionnaire = {
             question2: "האם ברצונך לאשר את הבחירה שלך או לעבור לאפשרות אחרת?",
             options: [
                 { text: "לאשר את הבחירה בגז טבעי", nextSection: 15, icon: "גז.png" },
-                { text: "לעבור לאפשרות אחרת", nextSection: 8 }
+                { text: "לעבור לאפשרות אחרת", nextSection: 8, icon: "other_option.png" }
             ]
         },
         10: {
@@ -93,7 +93,7 @@ const questionnaire = {
             question2: "האם ברצונך לאשר את הבחירה שלך או לעבור לאפשרות אחרת?",
             options: [
                 { text: "לאשר את הבחירה בטורבינות רוח", nextSection: 15, icon: "רוח.png" },
-                { text: "לעבור לאפשרות אחרת", nextSection: 8 }
+                { text: "לעבור לאפשרות אחרת", nextSection: 8, icon: "other_option.png" }
             ]
         },
         11: {
@@ -102,7 +102,7 @@ const questionnaire = {
             question2: "האם ברצונך לאשר את הבחירה שלך או לעבור לאפשרות אחרת?",
             options: [
                 { text: "לאשר את הבחירה באנרגיה הידרו-אלקטרית", nextSection: 15, icon: "הידרו.png" },
-                { text: "לעבור לאפשרות אחרת", nextSection: 8 }
+                { text: "לעבור לאפשרות אחרת", nextSection: 8, icon: "other_option.png" }
             ]
         },
         12: {
@@ -111,7 +111,7 @@ const questionnaire = {
             question2: "האם ברצונך לאשר את הבחירה שלך או לעבור לאפשרות אחרת?",
             options: [
                 { text: "לאשר את הבחירה באנרגיה פוטו-וולטאית", nextSection: 15, icon: "פוטו-וולטאית.png" },
-                { text: "לעבור לאפשרות אחרת", nextSection: 8 }
+                { text: "לעבור לאפשרות אחרת", nextSection: 8, icon: "other_option.png" }
             ]
         },
         13: {
@@ -120,7 +120,7 @@ const questionnaire = {
             question2: "האם ברצונך לאשר את הבחירה שלך או לעבור לאפשרות אחרת?",
             options: [
                 { text: "לאשר את הבחירה באנרגיה תרמו-סולארית", nextSection: 15, icon: "תרמו-סולארי.png" },
-                { text: "לעבור לאפשרות אחרת", nextSection: 8 }
+                { text: "לעבור לאפשרות אחרת", nextSection: 8, icon: "other_option.png" }
             ]
         },
         14: {
@@ -129,7 +129,7 @@ const questionnaire = {
             question2: "האם ברצונך לאשר את הבחירה שלך או לעבור לאפשרות אחרת?",
             options: [
                 { text: "לאשר את הבחירה באנרגיה גרעינית", nextSection: 15, icon: "גרעיני.png" },
-                { text: "לעבור לאפשרות אחרת", nextSection: 8 }
+                { text: "לעבור לאפשרות אחרת", nextSection: 8, icon: "other_option.png" }
             ]
         },
         15: {
