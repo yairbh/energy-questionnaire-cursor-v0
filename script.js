@@ -203,8 +203,10 @@ function displayQuestion() {
                 if (questionnaire.currentSection >= 2 && questionnaire.currentSection <= 7) {
                     const contentParts = section.content.split('יחד עם זאת...');
                     contentDiv.innerHTML = `
-                        <p> <strong>בחירה מצוינת!</strong> ${contentParts[0]}</p>
-                        <p><strong>יחד עם זאת...</strong> ${contentParts[1]}</p>
+                       <p><strong>בחירה מצוינת!</strong></p>
+                        <p>${contentParts[0].replace('בחירה מצוינת!', '')}</p>
+                        <p><strong>יחד עם זאת...</strong></p>
+                        <p>${contentParts[1]}</p>
                     `;
                 } else {
                     contentDiv.innerHTML = `<p>${section.content}</p>`;
