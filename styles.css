@@ -2,7 +2,7 @@
 @font-face {
   font-family: 'FbAgol';
   src: url('../fonts/FbAgol-Regular.otf') format('opentype');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -10,13 +10,13 @@
   font-family: 'FbAgol';
   src: url('../fonts/FbAgol-Bold.otf') format('opentype');
   font-weight: bold;
-  font-style: normal;
+  font-style: 700;
 }
 
 @font-face {
   font-family: 'FbAgol';
   src: url('../fonts/FbAgol-Light.otf') format('opentype');
-  font-weight: light;
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -24,7 +24,7 @@
   font-family: 'FbAgol';
   src: url('../fonts/FbAgol-Medium.otf') format('opentype');
   font-weight: medium;
-  font-style: normal;
+  font-style: 500;
 }
 
 
