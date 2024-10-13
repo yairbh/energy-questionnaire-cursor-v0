@@ -146,60 +146,113 @@ function displayQuestion() {
     const questionContainer = document.getElementById('question-container');
     const optionsContainer = document.getElementById('options-container');
 
-    questionContainer.innerHTML = `<h2 class="question-header">${section.question}</h2>`;
-    if (section.content) {
-        questionContainer.innerHTML += `
-            <div class="energy-type-title">${section.question}</div>
-            <div class="description-section">
-                <h3>בחירה מצוינת!</h3>
-                <p>${section.content}</p>
-            </div>
-        `;
-    }
-    if (section.content2) {
-        questionContainer.innerHTML += `
-            <div class="description-section">
-                <h3>יחד עם זאת...</h3>
-                <p>${section.content2}</p>
-            </div>
-        `;
-    }
-    if (section.question2) {
-        questionContainer.innerHTML += `<h3>${section.question2}</h3>`;
-    }
-    optionsContainer.innerHTML = '';
+    // Clear previous content with a fade-out effect
+    fadeOut(questionContainer);
+    fadeOut(optionsContainer);
 
-    if (section.type === "circle") {
-        optionsContainer.className = "circle-container";
-        section.options.forEach((option, index) => {
-            const button = document.createElement('div');
-            button.className = "circle-option";
-            const angle = (index * 60) - 90; // Start from the top (90 degrees)
-            const radius = 150; // Adjust this value to change the size of the circle
-            const x = Math.cos(angle * Math.PI / 180) * radius;
-            const y = Math.sin(angle * Math.PI / 180) * radius;
-            button.style.transform = `translate(${x}px, ${y}px)`;
-            button.innerHTML = `
-                <img src="${option.icon}" alt="${option.text}">
-                <span>${option.text}</span>
-            `;
-            button.onclick = () => selectOption(option.nextSection);
-            optionsContainer.appendChild(button);
-        });
-    } else {
-        optionsContainer.className = "";
-        section.options.forEach(option => {
-            const button = document.createElement('button');
-            button.innerHTML = `<img src="${option.icon}" alt="${option.text}">${option.text}`;
-            button.onclick = () => selectOption(option.nextSection);
-            optionsContainer.appendChild(button);
-        });
-    }
+    setTimeout(() => {
+        questionContainer.innerHTML = '';
+        optionsContainer.innerHTML = '';
+
+        // Display the main question header for all sections except the first
+        if (questionnaire.currentSection !== 1) {
+            const mainHeader = document.createElement('h1');
+            mainHeader.className = 'question-header';
+            mainHeader.textContent = 'מהי הטכנולוגיה הטובה ביותר לייצור חשמל?';
+            questionContainer.appendChild(mainHeader);
+        }
+
+        // Display options
+        if (section.type === "circle") {
+            optionsContainer.className = "circle-container";
+            const dottedCircle = document.createElement('div');
+            dottedCircle.className = 'dotted-circle';
+            optionsContainer.appendChild(dottedCircle);
+
+            section.options.forEach((option, index) => {
+                const button = document.createElement('div');
+                button.className = "circle-option";
+                const angle = (index * 60) - 90; // Start from the top (90 degrees)
+                const radius = 180; // Adjust this value to change the size of the circle
+                const x = Math.cos(angle * Math.PI / 180) * radius;
+                const y = Math.sin(angle * Math.PI / 180) * radius;
+                button.style.transform = `translate(${x}px, ${y}px)`;
+                button.innerHTML = `
+                    <img src="${option.icon}" alt="${option.text}">
+                    <span>${option.text}</span>
+                `;
+                button.onclick = () => selectOption(option.nextSection);
+                optionsContainer.appendChild(button);
+            });
+        } else {
+            if (section.question !== 'החלטה סופית') {
+                const sectionTitle = document.createElement('h2');
+                sectionTitle.textContent = section.question;
+                questionContainer.appendChild(sectionTitle);
+            }
+
+            if (section.content) {
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'description-section';
+                contentDiv.innerHTML = `<p>${section.content}</p>`;
+                questionContainer.appendChild(contentDiv);
+            }
+
+            if (section.question2) {
+                const question2Header = document.createElement('h3');
+                question2Header.textContent = section.question2;
+                question2Header.style.textAlign = 'right';
+                questionContainer.appendChild(question2Header);
+            }
+
+            const buttonContainer = document.createElement('div');
+            buttonContainer.className = 'button-container';
+
+            section.options.forEach((option, index) => {
+                const button = document.createElement('button');
+                button.className = index === 0 ? 'button button-primary' : 'button';
+                button.textContent = option.text;
+                button.onclick = () => {
+                    button.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        button.style.transform = 'scale(1)';
+                        selectOption(option.nextSection);
+                    }, 100);
+                };
+                buttonContainer.appendChild(button);
+            });
+
+            optionsContainer.appendChild(buttonContainer);
+        }
+
+        // Add "Start Over" button for the final section
+        if (section.type === "final") {
+            const startOverButton = document.createElement('button');
+            startOverButton.className = 'button';
+            startOverButton.textContent = 'התחילו מחדש';
+            startOverButton.onclick = () => selectOption(1);
+            optionsContainer.appendChild(startOverButton);
+        }
+
+        // Fade in the new content
+        fadeIn(questionContainer);
+        fadeIn(optionsContainer);
+    }, 300); // Wait for fade-out to complete
 }
 
 function selectOption(nextSection) {
     questionnaire.currentSection = nextSection;
     displayQuestion();
+}
+
+function fadeOut(element) {
+    element.style.opacity = '0';
+    element.style.transition = 'opacity 300ms ease-in';
+}
+
+function fadeIn(element) {
+    element.style.opacity = '1';
+    element.style.transition = 'opacity 300ms ease-in';
 }
 
 window.onload = displayQuestion;
