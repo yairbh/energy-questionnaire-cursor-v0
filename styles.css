@@ -9,22 +9,22 @@
 @font-face {
   font-family: 'FbAgol';
   src: url('fonts/FbAgol-Bold.otf') format('opentype');
-  font-weight: bold;
-  font-style: 500;
+  font-weight: 500;
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'FbAgol';
   src: url('fonts/FbAgol-Light.otf') format('opentype');
-  font-weight: light;
-  font-style: 200;
+  font-weight: 200;
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'FbAgol';
   src: url('fonts/FbAgol-Medium.otf') format('opentype');
-  font-weight: medium;
-  font-style: 400;
+  font-weight: 400;
+  font-style: noraml;
 }
 
 /* Ensure that all relevant elements inherit the FbAgol font */
