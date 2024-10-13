@@ -1,6 +1,36 @@
+/* Fonts */
+@font-face {
+  font-family: 'FbAgol';
+  src: url('../fonts/FbAgol-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FbAgol';
+  src: url('../fonts/FbAgol-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FbAgol';
+  src: url('../fonts/FbAgol-Light.otf') format('opentype');
+  font-weight: light;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FbAgol';
+  src: url('../fonts/FbAgol-Medium.otf') format('opentype');
+  font-weight: medium;
+  font-style: normal;
+}
+
+
 /* General Styles */
 body {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'FbAgol', Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
