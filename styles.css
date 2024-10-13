@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
@@ -114,8 +114,8 @@ p {
 }
 
 .energy-type-title {
-    background-color: #d0f0c0;
-    color: #333;
+    background-color: rgb(224, 239, 190);
+    color: rgb(242, 249, 225);
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 5px;
