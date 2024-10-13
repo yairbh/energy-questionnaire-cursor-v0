@@ -2,7 +2,7 @@
 @font-face {
   font-family: 'FbAgol';
   src: url('fonts/FbAgol-Regular.otf') format('opentype');
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -16,7 +16,7 @@
 @font-face {
   font-family: 'FbAgol';
   src: url('fonts/FbAgol-Light.otf') format('opentype');
-  font-weight: 300;
+  font-weight: 200;
   font-style: normal;
 }
 
